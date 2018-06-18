@@ -7,8 +7,9 @@ pinMode(LEDpin, OUTPUT);
 }
 void loop() {
   force = analogRead(pressurePin);
+  force = map(force, 0, 1023, 0, 10000);
   Serial.println(force);
-if(force > 500)
+if(force > 5000)
 {
   digitalWrite(LEDpin, HIGH);
 }
@@ -18,4 +19,5 @@ else
 }
 delay(100);
 }
+
 
