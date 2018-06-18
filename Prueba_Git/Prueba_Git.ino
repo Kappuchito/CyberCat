@@ -1,10 +1,21 @@
-  void setup() {
-  // put your setup code here, to run once:
-//waso waso waso BITCONEEEEEEEEEEEEEEEE
-//prueba git y weas
-// holi esto no va a funcionar con el ide ordinario de arduino
+int pressurePin = A0;
+int force;
+int LEDpin = 12;
+void setup() {
+Serial.begin(9600);
+pinMode(LEDpin, OUTPUT);
+}
+void loop() {
+  force = analogRead(pressurePin);
+  Serial.println(force);
+if(force > 500)
+{
+  digitalWrite(LEDpin, HIGH);
+}
+else
+{
+  digitalWrite(LEDpin, LOW);
+}
+delay(100);
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-}
