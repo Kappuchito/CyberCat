@@ -1,2 +1,2 @@
 # CyberCat
-Desarrollo de proyecto CyberCat, prototipado
+Desarrollo de proyecto CyberCat, prototipadoo
