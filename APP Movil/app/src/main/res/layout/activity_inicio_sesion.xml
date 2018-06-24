@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/IniciarSesion"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.cybercat.cybercat.Vistas.InicioSesionView">
+
+    <EditText
+        android:id="@+id/etCorreo"
+        android:hint="Introduzca su correo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="start"
+        android:gravity="center"/>
+
+    <EditText
+        android:id="@+id/etClave"
+        android:hint="Introduzca su clave"
+        android:layout_below="@+id/etCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:maxLines="1"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:onClick="ingresar"
+        android:id="@+id/btnIngresar"
+        android:layout_below="@+id/etClave"
+        android:text="Ingresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:layout_below="@+id/btnIngresar"
+        android:id="@+id/tvEstadoSesion"
+        android:text="  a la espera cochinoqliaoaeringresa tus credenciales perkin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
