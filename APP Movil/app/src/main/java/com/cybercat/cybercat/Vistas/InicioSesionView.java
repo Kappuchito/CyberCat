@@ -13,18 +13,18 @@ import com.cybercat.cybercat.R;
 public class InicioSesionView extends AppCompatActivity
 implements InicioSesion.View
 {
-    private TextView tvEstadoSesion;
     private EditText etCorreo;
     private EditText etClave;
+    private TextView tvEstadoSesion;
     private InicioSesion.Presenter presenter;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_sesion);
-        tvEstadoSesion=findViewById(R.id.tvEstadoSesion);
         etCorreo=findViewById(R.id.etCorreo);
         etClave=findViewById(R.id.etClave);
+        tvEstadoSesion=findViewById(R.id.tvEstadoSesion);
         presenter = new InicioSesionPresenter(this);
     }
 
@@ -33,9 +33,8 @@ implements InicioSesion.View
         presenter.iniciarSesion(etCorreo.getText().toString(),
                 etClave.getText().toString());
     }
-
     @Override
-    public void showResult(String resultado)
+    public void showResult(String resultado, String titulo)
     {
         tvEstadoSesion.setText(resultado);
     }

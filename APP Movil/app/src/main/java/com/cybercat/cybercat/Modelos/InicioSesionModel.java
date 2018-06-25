@@ -14,16 +14,25 @@ public class InicioSesionModel          //Se crea la clase del modelo de InicioS
 
     @Override
     public void iniciarSesion(String Correo, String Clave)//Se crea el método iniciarSesion con
-    {                                                     //los parámetros de correo y clave, con el
-        if(Correo.equals("sinkfz@gmail.com") &&           //fin de comprobar si la información
-                                    Clave.equals("1234")) //ingresada por el usuario concuerda con
-        {                                                 //las validaciones dentro del método
-            resultado = "Inicio de sesion exitoso";       //El resultado de este método se basa
-            presenter.showResult(resultado);              //en comparar los datos ingresados por el
-        }                                                 //usuario con las validaciones, depende de
-        else{                                             //cada caso, el mensaje que se envía
-            resultado = "Error al iniciar sesion";        //variará
-            presenter.showResult(resultado);
+    {                                                     //los parámetros de correo y clave, estos
+        if(Correo!=null && Clave != null )                //se encargaran de las validaciones.
+        {
+            if(Correo.equals("sinkfz@gmail.com")
+                    && Clave.equals("1234"))
+            {
+                resultado = "Inicio de sesión exitoso.";       //El resultado de este método se basa
+                presenter.showResult(resultado, "Éxito");//en comparar los datos ingresados por
+            }                                                  //el usuario con las validaciones,
+            else                                               //dependiendo de cada caso, el mensaje
+            {                                                  //que es envíado cambiará
+                resultado = "Error al iniciar sesión.";
+                presenter.showResult(resultado, "Error");
+            }
+        }
+        else
+        {
+            resultado = "Debe ingresar datos.";
+            presenter.showResult(resultado, "Error");
         }
     }
 }

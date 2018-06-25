@@ -7,7 +7,6 @@ public class InicioSesionPresenter implements InicioSesion.Presenter
 {
     private InicioSesion.View view;
     private InicioSesion.Model model;
-
     public InicioSesionPresenter(InicioSesion.View view)
     {
         this.view = view;
@@ -15,11 +14,11 @@ public class InicioSesionPresenter implements InicioSesion.Presenter
     }
 
     @Override
-    public void showResult(String resultado)
+    public void showResult(String resultado, String titulo)
     {
         if(view != null)
         {
-            view.showResult(resultado);
+            view.showResult(resultado,titulo);
         }
     }
 
