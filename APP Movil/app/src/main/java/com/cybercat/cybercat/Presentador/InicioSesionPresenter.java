@@ -23,11 +23,11 @@ public class InicioSesionPresenter implements InicioSesion.Presenter
     }
 
     @Override
-    public void iniciarSesion(String Correo, String Clave)
+    public void iniciarSesion(String correo, String clave)
     {
         if(view != null)
         {
-            model.iniciarSesion(Correo,Clave);
+            model.iniciarSesion(correo,clave);
         }
     }
 }
