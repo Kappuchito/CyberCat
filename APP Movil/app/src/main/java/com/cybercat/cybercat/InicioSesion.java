@@ -5,15 +5,15 @@ public interface InicioSesion
 {
     interface View
     {
-        void showResult(String resultado, String título);
+        void showResult(String resultado, String titulo);
     }
     interface Presenter
     {
-        void showResult(String resultado, String título);
-        void iniciarSesion(String Correo, String Clave);
+        void showResult(String resultado, String titulo);
+        void iniciarSesion(String correo, String clave);
     }
     interface Model
     {
-        void iniciarSesion(String Correo, String Clave);
+        void iniciarSesion(String correo, String clave);
     }
 }
