@@ -2,29 +2,37 @@ package com.cybercat.cybercat.Modelos;
 
 import com.cybercat.cybercat.InicioSesion;
 
-public class InicioSesionModel          //Se crea la clase del modelo de InicioSesion,
-           implements InicioSesion.Model//implementando la interface del modelo en base
-{                                       //al patrón Modelo - Vista - Presentador
+/*Se crea la clase del modelo de InicioSesion, implementando la interface del modelo en base al patrón Modelo - Vista - Presentador (MVP)*/
+
+public class InicioSesionModel                       
+           implements InicioSesion.Model
+
     private InicioSesion.Presenter presenter;
     private String resultado;
-    public InicioSesionModel(InicioSesion.Presenter presenter)//Se crea un método público del modelo que
-    {                                                         //instancia la interface del presentador
+
+/*Se crea un método público del modelo que instancia la interface del presentador*/
+
+    public InicioSesionModel(InicioSesion.Presenter presenter)
+    {
         this.presenter = presenter;
     }
 
     @Override
-    public void iniciarSesion(String Correo, String Clave)//Se crea el método iniciarSesion con
-    {                                                     //los parámetros de correo y clave, estos
-        if(Correo!=null && Clave != null )                //se encargaran de las validaciones.
+
+/*Se crea el método iniciarSesion con los parámetros de correo y clave, estos se encargaran de las validaciones.*/
+/*El resultado de este método se basa en comparar los datos ingresados por el usuario con las validaciones, dependiendo de cada caso, el mensaje que es envíado cambiará.*/
+    public void iniciarSesion(String correo, String clave)
+    {
+        if(correo!=null && clave != null )
         {
-            if(Correo.equals("sinkfz@gmail.com")
-                    && Clave.equals("1234"))
+            if(correo.equals("sinkfz@gmail.com")
+                    && clave.equals("1234"))
             {
-                resultado = "Inicio de sesión exitoso.";       //El resultado de este método se basa
-                presenter.showResult(resultado, "Éxito");//en comparar los datos ingresados por
-            }                                                  //el usuario con las validaciones,
-            else                                               //dependiendo de cada caso, el mensaje
-            {                                                  //que es envíado cambiará
+                resultado = "Inicio de sesión exitoso.";
+                presenter.showResult(resultado, "Éxito");
+            }
+            else
+            {
                 resultado = "Error al iniciar sesión.";
                 presenter.showResult(resultado, "Error");
             }
